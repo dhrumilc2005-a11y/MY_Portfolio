@@ -1,0 +1,1458 @@
+<!-- Portfolio - Dhrumil_Chauhan -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Chauhan | Full Stack Python Developer & AI/ML Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        'secondary': {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        .dark-mode body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .section-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .dark-mode .skill-bar {
+            background-color: #334155;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dark-mode .project-card {
+            background-color: #1e293b;
+        }
+
+        .contact-input {
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .dark-mode .contact-input {
+            background-color: #334155;
+            border-color: #475569;
+            color: #f1f5f9;
+        }
+
+        .dark-mode .contact-input:focus {
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+        }
+
+        .theme-toggle {
+            transition: transform 0.5s;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+
+        .dark-mode ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        .dark-mode ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-inter dark:bg-gray-900 dark:text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md py-4 shadow-sm">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center">
+                        <span class="text-white font-bold">DC</span>
+                    </div>
+                    <span class="text-xl font-bold">Dhrumil Chauhan</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link font-medium">Home</a>
+                    <a href="#about" class="nav-link font-medium">About</a>
+                    <a href="#skills" class="nav-link font-medium">Skills</a>
+                    <a href="#projects" class="nav-link font-medium">Projects</a>
+                    <a href="#contact" class="nav-link font-medium">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="theme-toggle w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                        <i id="theme-icon" class="fas fa-moon text-gray-800 dark:text-yellow-400"></i>
+                    </button>
+
+                    <a href="#contact"
+                        class="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition">Hire
+                        Me</a>
+
+                    <button id="mobile-menu-btn" class="md:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="font-medium py-2 border-b border-gray-200 dark:border-gray-700">Home</a>
+                    <a href="#about" class="font-medium py-2 border-b border-gray-200 dark:border-gray-700">About</a>
+                    <a href="#skills" class="font-medium py-2 border-b border-gray-200 dark:border-gray-700">Skills</a>
+                    <a href="#projects"
+                        class="font-medium py-2 border-b border-gray-200 dark:border-gray-700">Projects</a>
+                    <a href="#contact" class="font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-8">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm font-medium mb-4">
+                        <i class="fas fa-rocket mr-2"></i> Python Developer | AI/ML Engineer
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-primary-600 dark:text-primary-400">Dhrumil Chauhan</span>
+                    </h1>
+
+                    <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium mb-6">
+                        Full Stack Python Developer & AI/ML Engineer
+                    </h2>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg max-w-xl">
+                        Passionate about building intelligent web applications with Python, Django, and modern AI/ML
+                        technologies. I create scalable solutions that solve real-world problems.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects"
+                            class="bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition flex items-center">
+                            <i class="fas fa-code mr-2"></i> View Projects
+                        </a>
+                        <a href="#contact"
+                            class="border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 px-6 py-3 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 transition flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                        </a>
+                        <a href="assets/pdf/Dhrumil_Chauhan - Resume.pdf"
+                            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                    </div>
+
+                    <div class="mt-12 flex space-x-6">
+                        <a href="https://github.com/dhrumilc2005-a11y" target="_blank"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition text-2xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dhrumil-chauhan-1ba09435b/" target="_blank"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="dhrumilc2005@gmail.com"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition text-2xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:w-2/5 relative">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-20 animate-pulse-slow">
+                        </div>
+                        <div
+                            class="absolute inset-4 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full animate-float">
+                        </div>
+                        <div
+                            class="absolute inset-8 bg-gray-800 dark:bg-gray-900 rounded-full flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <i class="fas fa-laptop-code text-6xl text-primary-400 mb-4"></i>
+                                <h3 class="text-xl font-bold text-white">Python + AI</h3>
+                                <p class="text-gray-300 mt-2">Full Stack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">5+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                        </div>
+                        <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">10+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Skills</div>
+                        </div>
+                        <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">100%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Dedication</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800 section-transition">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-primary-600 dark:border-primary-400 pb-2">About Me</span>
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/5">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white dark:border-gray-700 shadow-xl mx-auto">
+                            <img src="assets/image/Dhrumil_Chauhan - Profile.jpeg"
+                                alt="Dhrumil Chauhan" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 bg-primary-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                            <div class="text-xl font-bold">Experience</div>
+                            <div class="text-sm">Ready to Innovate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-3/5">
+                    <h3 class="text-2xl font-bold mb-6">Building the Future with Code & AI</h3>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        I'm a passionate Full Stack Python Developer and AI/ML Engineer from India, with a strong
+                        foundation in building scalable web applications and implementing machine learning solutions. As
+                        a Experience I bring fresh perspectives, eagerness to learn, and dedication to solving complex
+                        problems.
+                    </p>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        My journey in Full Stack Developer started with Python, and I quickly expanded my skills to
+                        include full-stack development with Django/Flask, database design, and modern AI/ML
+                        technologies. I enjoy creating applications that leverage artificial intelligence to provide
+                        intelligent, user-friendly experiences.
+                    </p>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold mb-4">Career Goals</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Secure a challenging role as a Full Stack Python Developer or AI/ML
+                                    Engineer</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Contribute to innovative projects that solve real-world problems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Continuously learn and adapt to emerging technologies in AI and web
+                                    development</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="mr-6">
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">Ahmedabad</div>
+                            <div class="text-gray-600 dark:text-gray-400">Location</div>
+                        </div>
+                        <div class="mr-6">
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">Available</div>
+                            <div class="text-gray-600 dark:text-gray-400">Status</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">1+</div>
+                            <div class="text-gray-600 dark:text-gray-400">Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4 md:px-8 section-transition">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-primary-600 dark:border-primary-400 pb-2">Technical Skills</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-desktop text-blue-600 dark:text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Frontend</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML5 / CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>BootStrap / Tailwind CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>JavaScript / React.Js (ES6+)</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-server text-green-600 dark:text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Backend</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Django / Flask</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>REST APIs</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-database text-purple-600 dark:text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Database</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PostgreSQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>SQLite3</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI/ML Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-red-600 dark:text-red-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">AI / ML</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>NumPy / Pandas / Matplotlib</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Scikit-learn</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>TensorFlow / PyTorch</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-tools text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Tools</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Git & GitHub</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Linux</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MacOS</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 project-card">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-4">
+                            <i class="fas fa-cogs text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Other Skills</h3>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Responsive
+                            Design</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Authentication</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Payment Gateway</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Database Design</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Database
+                            Migration</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">GitHub.IO / Vercel /
+                            Render / Netlify</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">ChatBot / Prompt
+                            Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800 section-transition">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-primary-600 dark:border-primary-400 pb-2">Featured Projects</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            Django
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Jewellery Shop</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Developed a Full-Stack-Commerce Web Application for Online Jewellery Shopping
+                            using Python and Django
+                            Implemented User Authentication, Payment Gateway, Product Listing, Shopping Cart,
+                            and Order Management Features
+                            Designed Database Models for Products, Users, and Orders using Django ORM
+                            Integrated Admin Panel for Managing Products, Categories, and Customer Orders - Ensured
+                            Secure Handling of User Data and Smooth Navigation with a Responsive UI.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">HTML5</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">JavaScript</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Python</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Django</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">SQLite3</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <a href="https://github.com/dhrumilc2005-a11y/E-Commerce_JewelleryShop.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-comments text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            Django
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Quiz-Event-Application</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            The Quiz Event App is a web-based application built using Python and Django for conducting
+                            online quiz events. It allows organizers to create and manage quizzes, while users can
+                            register and participate easily. The system supports user authentication, multiple-choice
+                            questions, and timed quizzes. Scores are calculated automatically and results are displayed
+                            instantly. This application is suitable for schools, colleges, interviews and online
+                            competitions.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">HTML</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">
+                                CSS</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">JavaScript</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Python</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Django</span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">SQLite3</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <a href="https://github.com/dhrumilc2005-a11y/QuizEventApp.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-red-500 to-pink-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-calculator text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            Python - DataScience
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Calculator</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            The Calculator App is a simple desktop application developed using Python that performs
+                            basic arithmetic operations like addition, subtraction, multiplication, and division. The
+                            app features a user-friendly interface where users can input numbers and get instant
+                            results. It can also handle decimal numbers and simple error checking for invalid inputs.
+                            This project is ideal for learning Python programming and GUI development.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs">Python</span>
+                            <span
+                                class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs">TKinter</span>
+                            <span
+                                class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded text-xs">Math</span>
+                        </div>
+                        <div class="flex justify-between" style="margin-top: 80px;">
+                            <a href="https://github.com/dhrumilc2005-a11y/Calculator.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            AI/ML
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Zarvis AI Agent</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Designed and Developed an AI-Powered Conversational Agent to Handle User
+                            Queries Intelligently
+                            Implemented Natural Language Processing Techniques for Intent Recognition and
+                            Response Generation
+                            Integrated Backend Logic to Automate Tasks and Deliver Accurate, Real-Time
+                            Responses
+                            Improved User Interaction by Creating a Simple and Intuitive Conversational
+                            Interface
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Python</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">AI</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Machine-Learning</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">GIF
+                                Live UI</span>
+                        </div>
+
+                        <div class="flex justify-between" style="margin-top: 150px;">
+                            <a href="https://github.com/dhrumilc2005-a11y/Zarvis_AI_Agent.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-eye text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            AI/ML
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Face-Recognization Attendence Application</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            The Face Recognition Attendance App is an intelligent system developed using Python and
+                            AI/Deep Learning that automates attendance marking. It uses OpenCV and face-recognition
+                            libraries to detect and identify faces in real time. Once a person is recognized, their
+                            attendance is recorded automatically in a database or spreadsheet, reducing manual work. The
+                            system ensures accuracy, speed, and convenience and is suitable for schools, colleges, and
+                            workplaces.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">OPENCV</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">Face-Recognization</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">Numpy</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">Pandas</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">SQLite3</span>
+                        </div>
+
+                        <div class="flex justify-between" style="margin-top: 50px;">
+                            <a href="https://github.com/dhrumilc2005-a11y/FaceRecognizationAttendenceSystem.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-teal-500 to-cyan-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-arrow-trend-up text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                            Python-DataScience
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Stock-Price-Prediction</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            The Stock Price Prediction App is a Python-based data science project that forecasts future
+                            stock prices using historical data. It uses Pandas and NumPy for data processing, Matplotlib
+                            and Seaborn for data visualization, and scikit-learn or TensorFlow/Keras for building
+                            machine learning models. <br> The app analyzes trends and patterns to predict stock movements,
+                            helping users make informed investment decisions.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">Data-Science
+                                REST</span>
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">Seaboarn</span>
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">Matplotlib</span>
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">Scikit-learn</span>
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">TensorFlow/Keras</span>
+                            <span
+                                class="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded text-xs">SQLite3</span>
+                        </div>
+
+                        <div class="flex justify-between" style="margin-top: 100px;">
+                            <a href="https://github.com/dhrumilc2005-a11y/StockPricePrediction.git"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#"
+                                class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://github.com/dhrumilc2005-a11y"
+                    class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-16 px-4 md:px-8 section-transition">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-primary-600 dark:border-primary-400 pb-2">Experience & Education</span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-briefcase mr-3 text-primary-600 dark:text-primary-400"></i>
+                        Experience & Internships
+                    </h3>
+
+                    <div class="space-y-8">
+                        <div class="relative pl-10 pb-8 border-l-2 border-primary-400 dark:border-primary-600">
+                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                            <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold">Python AI/ML Engineer</h4>
+                                    <span
+                                        class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">
+                                        July 2025 - Present</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                    Python AI/ML Engineer with Hands-On Experience in Developing, Training, and
+                                    Deploying AI - Machine Learning Models.
+                                </p>
+                                <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Built 5+ Full-Stack Applications using Django, AI/ML</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Created data analysis tools using Pandas, NumPy and Matplotlib</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Implemented REST APIs with Authentication Systems</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Deployment With Git, GitHub, Vercel, Render & Netlify</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-10 pb-8 border-l-2 border-primary-400 dark:border-primary-600">
+                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                            <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold">Web Developer - Trainee</h4>
+                                    <span
+                                        class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">Jan
+                                        2025 - Jun 2025</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                    A Web Developer Trainee is an Entry-Level Learner who is Developing Practical Skills
+                                    in Building and Maintaining Websites and Web Applications.
+                                </p>
+                                <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Completed 10+ Comprehensive Projects</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Mastered HTML, CSS, JS, BootStrap, Tailwind, Python, Django,
+                                            DataScience(Libraries)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+                                        <span>Learned Deployment with GitHub & Netlify</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3 text-primary-600 dark:text-primary-400"></i>
+                        Education & Certifications
+                    </h3>
+
+                    <div class="space-y-8">
+                        <div class="relative pl-10 pb-8 border-l-2 border-primary-400 dark:border-primary-600">
+                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                            <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold">BCA in Computer Science</h4>
+                                    <span
+                                        class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">Graduate
+                                        2025</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                    Graduate in Bachelor's degree with focus on Web Developing, Web Designing, Software
+                                    Engineering, Artificial
+                                    Intelligence, Machine Learning and Data Structures.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Web
+                                        Development
+                                    </span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Web
+                                        Designing
+                                    </span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Database
+                                        System
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-10 pb-8 border-l-2 border-primary-400 dark:border-primary-600">
+                            <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                            <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold">Certifications</h4>
+                                    <span
+                                        class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">2025
+                                    </span>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-bold">Introduction to Python Programming</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">Covers Python Core,
+                                            Frameworks & Libraries</p>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="font-bold">Introduction to Generative AI</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">Supervised/Unsupervised
+                                            Learning, Neural Networks, NLP Basics</p>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="font-bold">Data Analytics with Generative AI</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">Includes Data Fetching,
+                                            Retriving & Storing use of AI</p>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="font-bold">Introduction to Google ADS Search</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">Google ADS Search ADS are
+                                            text ads that appear on Google Search Result when User Search Keywords
+                                            related to your Bussiness</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 md:px-8 section-transition">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="border-b-4 border-primary-600 dark:border-primary-400 pb-2">Get In Touch</span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Let's Connect!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        I'm currently looking for opportunities as a Full Stack Python Developer or AI/ML Engineer.
+                        Whether you have a question, opportunity, or just want to connect, feel free to reach out!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <a href="dhrumilc2005@gmail.com"
+                                    class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">dhrumilc2005@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <a href="mob:+917779019549"
+                                    class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">+91
+                                    7779019549</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Ahmedabad, Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-lg mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/dhrumilc2005-a11y" target="_blank"
+                                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-800 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dhrumil-chauhan-1ba09435b/" target="_blank"
+                                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-800 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <form id="contact-form" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Full
+                                Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg contact-input focus:outline-none focus:border-primary-500"
+                                required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email
+                                Address</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg contact-input focus:outline-none focus:border-primary-500"
+                                required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message"
+                                class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg contact-input focus:outline-none focus:border-primary-500"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary-600 text-white py-3 rounded-lg font-medium hover:bg-primary-700 transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center">
+                            <span class="text-white font-bold">DC</span>
+                        </div>
+                        <span class="text-xl font-bold">Dhrumil Chauhan</span>
+                    </div>
+                    <p class="text-gray-400">Full Stack Developer | Python - AI/ML Engineer</p>
+                </div>
+
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="https://github.com/dhrumilc2005-a11y" target="_blank"
+                        class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-600 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dhrumil-chauhan-1ba09435b/" target="_blank"
+                        class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-600 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="dhrumilc2005@gmail.com"
+                        class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-600 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Dhrumil Chauhan. All rights reserved.</p>
+                <p class="mt-2">Designed & Developed By - Dhrumil
+                    Chauhan.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+
+            if (htmlElement.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+
+                    // If it's the skills section, animate skill bars
+                    if (entry.target.id === 'skills') {
+                        setTimeout(animateSkillBars, 300);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section-transition').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // In a real application, you would send this data to a server
+            // For demo purposes, we'll just show a success message
+            formMessage.textContent = `Thank you, ${name}! Your message has been sent. I'll get back to you soon.`;
+            formMessage.classList.remove('hidden', 'text-red-500');
+            formMessage.classList.add('text-green-500');
+
+            // Reset form
+            contactForm.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Initialize skill bars with 0 width
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+            bar.style.width = '0%';
+        });
+
+        // Add animation to project cards on hover
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
